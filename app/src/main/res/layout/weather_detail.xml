@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/text_margin">
+
+    <RelativeLayout
+        style="@style/WeatherDetail">
+
+        <com.lee.luweather.view.IconView
+            android:id="@+id/icon_weather_fl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/微风"
+            android:textSize="@dimen/text_size_weather_detail_icon" />
+
+        <TextView
+            android:id="@+id/text_weather_fl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/icon_weather_fl"
+            android:layout_toRightOf="@+id/icon_weather_fl"
+            android:paddingRight="@dimen/text_margin"
+            android:paddingBottom="@dimen/headerbar_elevation"
+            android:text="风力"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/text_weather_detail_fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/text_weather_fl"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/text_weather_fl"
+            android:layout_below="@+id/text_weather_fl"
+            android:text="@string/big_text"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/WeatherDetail">
+
+        <com.lee.luweather.view.IconView
+            android:id="@+id/icon_weather_kq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/浮尘"
+            android:textSize="@dimen/text_size_weather_detail_icon" />
+
+        <TextView
+            android:id="@+id/text_weather_kq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/icon_weather_kq"
+            android:layout_toRightOf="@+id/icon_weather_kq"
+            android:paddingRight="@dimen/text_margin"
+            android:paddingBottom="@dimen/headerbar_elevation"
+            android:text="空气"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/text_weather_detail_kq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_weather_kq"
+            android:layout_alignLeft="@+id/text_weather_kq"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/text_weather_kq"
+            android:text="this is detail text show"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/WeatherDetail">
+
+        <com.lee.luweather.view.IconView
+            android:id="@+id/icon_weather_fs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/晴"
+            android:textSize="@dimen/text_size_weather_detail_icon" />
+
+        <TextView
+            android:id="@+id/text_weather_fs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/icon_weather_fs"
+            android:layout_toRightOf="@+id/icon_weather_fs"
+            android:paddingRight="@dimen/text_margin"
+            android:paddingBottom="@dimen/headerbar_elevation"
+            android:text="防晒"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/text_weather_detail_fs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_weather_fs"
+            android:layout_alignLeft="@+id/text_weather_fs"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/text_weather_fs"
+            android:text="this is detail text show"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/WeatherDetail">
+
+        <com.lee.luweather.view.IconView
+            android:id="@+id/icon_weather_cy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/热"
+            android:textSize="@dimen/text_size_weather_detail_icon" />
+
+        <TextView
+            android:id="@+id/text_weather_cy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/icon_weather_cy"
+            android:layout_toRightOf="@+id/icon_weather_cy"
+            android:paddingRight="@dimen/text_margin"
+            android:paddingBottom="@dimen/headerbar_elevation"
+            android:text="穿衣"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/text_weather_detail_cy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_weather_cy"
+            android:layout_alignLeft="@+id/text_weather_cy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/text_weather_cy"
+            android:text="this is detail text show"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/WeatherDetail">
+
+        <com.lee.luweather.view.IconView
+            android:id="@+id/icon_weather_yd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sync"
+            android:textSize="@dimen/text_size_weather_detail_icon" />
+
+        <TextView
+            android:id="@+id/text_weather_yd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/icon_weather_yd"
+            android:layout_toRightOf="@+id/icon_weather_yd"
+            android:paddingRight="@dimen/text_margin"
+            android:paddingBottom="@dimen/headerbar_elevation"
+            android:text="运动"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/text_weather_detail_yd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_weather_yd"
+            android:layout_alignLeft="@+id/text_weather_yd"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/text_weather_yd"
+            android:text="this is detail text show"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/WeatherDetail">
+
+        <com.lee.luweather.view.IconView
+            android:id="@+id/icon_weather_xc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/雨雪天气"
+            android:textSize="@dimen/text_size_weather_detail_icon" />
+
+        <TextView
+            android:id="@+id/text_weather_xc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/icon_weather_xc"
+            android:layout_toRightOf="@+id/icon_weather_xc"
+            android:paddingRight="@dimen/text_margin"
+            android:paddingBottom="@dimen/headerbar_elevation"
+            android:text="洗车"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/text_weather_detail_xc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_weather_xc"
+            android:layout_alignLeft="@+id/text_weather_xc"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/text_weather_xc"
+            android:text="this is detail text show"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/WeatherDetail">
+
+        <com.lee.luweather.view.IconView
+            android:id="@+id/icon_weather_ls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/晴间多云"
+            android:textSize="@dimen/text_size_weather_detail_icon" />
+
+        <TextView
+            android:id="@+id/text_weather_ls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="@dimen/headerbar_elevation"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_small"
+            android:paddingRight="@dimen/text_margin"
+            android:layout_toEndOf="@+id/icon_weather_ls"
+            android:layout_toRightOf="@+id/icon_weather_ls"
+            android:paddingBottom="@dimen/headerbar_elevation"
+            android:text="晾晒" />
+
+        <TextView
+            android:id="@+id/text_weather_detail_ls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/text_weather_ls"
+            android:layout_alignLeft="@+id/text_weather_ls"
+            android:layout_alignStart="@+id/text_weather_ls"
+            android:text="this is detail text show"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+</LinearLayout>

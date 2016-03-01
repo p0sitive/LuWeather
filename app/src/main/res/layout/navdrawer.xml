@@ -1,0 +1,163 @@
+<com.lee.luweather.view.ScrimInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navdrawer"
+    android:layout_width="@dimen/navdrawer_width"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@color/navdrawer_background"
+    android:clickable="true"
+    android:elevation="10dp"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:weightSum="1"
+    app:insetForeground="#4000">
+
+    <ScrollView
+        android:id="@+id/navDrawerScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/navDrawerLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <!-- Image Header-->
+
+            <LinearLayout
+                android:id="@+id/ltDrawerHeader"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/colorMain"
+                android:gravity="left|bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/imgDrawerHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:adjustViewBounds="true"
+                    android:fontFamily="sans-serif"
+                    android:gravity="bottom"
+                    android:paddingLeft="16dp"
+                    android:src="@drawable/img_navdrawerheader"
+                    android:text="LuWeather"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp" />
+
+                <!-- Slogan -->
+                <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/txtNavSlogan"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="16dp"
+                    android:text="Template"
+                    android:textColor="#E9E9E9"
+                    android:textSize="15dp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#888" />
+
+            <!-- Button -->
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/txtNavButtonBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/txtNavButton_selectCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <com.lee.luweather.view.IconView
+                        android:id="@+id/txtNavButtonImage_selectCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="0dp"
+                        android:text="@string/search"
+                        android:textSize="20sp" />
+
+                    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:editable="false"
+                        android:elegantTextHeight="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="sans-serif"
+                        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="16dp"
+                        android:singleLine="false"
+                        android:text="@string/SelectCity"
+                        android:textColor="@color/colorText"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/txtNavButton_CityManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <com.lee.luweather.view.IconView
+                        android:id="@+id/txtNavButtonImage_CityManager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="0dp"
+                        android:text="@string/list"
+                        android:textSize="20sp" />
+
+                    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:editable="false"
+                        android:elegantTextHeight="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="sans-serif"
+                        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="16dp"
+                        android:singleLine="false"
+                        android:text="@string/CityManager"
+                        android:textColor="@color/colorText"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</com.lee.luweather.view.ScrimInsetsFrameLayout>

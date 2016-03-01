@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorMain">#0277bd</color>
+    <color name="colorMainDark">#01579b</color>
+    <color name="colorMainAccent">#e8eaf6</color>
+    <color name="colorMainText">#ffffff</color>
+    <color name="colorMainBg">#FAFAFA</color>
+
+    <color name="colorText">#000000</color>
+    <color name="colorTextLight">#FFFFFF</color>
+
+    <color name="navdrawer_background">#FFFFFF</color>
+    <color name="tab_background">@color/colorPrimary</color>
+    <color name="tab_indicator_color">#FFF</color>
+
+    <color name="swipe_color_1">#B6DB49</color>
+    <color name="swipe_color_2">#99CC00</color>
+    <color name="swipe_color_3">#8ABD00</color>
+    <color name="swipe_color_4">#7CAF00</color>
+
+    <color name="color_weather_main_icon">#FFCC33</color>
+    <color name="weather_backgroud">#FFFFCC</color>
+</resources>

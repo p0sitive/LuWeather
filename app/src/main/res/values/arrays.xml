@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--array配合图片的名称展示不同类型的天气图标-->
+    <string-array name="weather_type">
+        <item>晴</item>
+        <item>多云</item>
+        <item>阴</item>
+        <item>阵雨</item>
+        <item>雷阵雨</item>
+        <item>雷阵雨并伴有冰雹</item>
+        <item>雨加雪</item>
+        <item>小雨</item>
+        <item>中雨</item>
+        <item>大雨</item>
+        <item>暴雨</item>
+        <item>大暴雨</item>
+        <item>特大暴雨</item>
+        <item>阵雪</item>
+        <item>小雪</item>
+        <item>中雪</item>
+        <item>大雪</item>
+        <item>暴雪</item>
+        <item>雾</item>
+        <item>冻雨</item>
+        <item>沙尘暴</item>
+        <item>小雨-中雨</item>
+        <item>中雨-大雨</item>
+        <item>大雨-暴雨</item>
+        <item>暴雨-大暴雨</item>
+        <item>大暴雨-特大暴雨</item>
+        <item>小雪-中雪</item>
+        <item>中雪-大雪</item>
+        <item>大雪-暴雪</item>
+        <item>浮尘</item>
+        <item>扬沙</item>
+        <item>强沙尘暴</item>
+    </string-array>
+</resources>

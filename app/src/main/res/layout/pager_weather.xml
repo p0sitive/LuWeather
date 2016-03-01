@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/weather_backgroud">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/pb_refresh"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/text_refreshtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/pb_refresh"
+                android:gravity="center_vertical"
+                android:text="正在刷新..."
+                android:textSize="@dimen/text_size_small" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rv_weather_mainheader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/text_main_margin_size">
+
+            <ImageView
+                android:id="@+id/icon_weather_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/text_main_margin_size"
+                android:background="@drawable/a_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_weather_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/icon_weather_main"
+                android:orientation="vertical"
+                android:padding="@dimen/headerbar_elevation">
+
+                <TextView
+                    android:id="@+id/textview_weather_main_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="-10℃"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textview_weather_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:text="晴"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_weather_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ll_weather_main"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/text_main_margin_size">
+
+
+                <TextView
+                    android:id="@+id/textview_main_windshow"
+                    style="@style/MainWeatherText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="风力" />
+
+                <TextView
+                    android:id="@+id/textview_main_airshow"
+                    style="@style/MainWeatherText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="空气质量：" />
+
+                <TextView
+                    android:id="@+id/textview_main_temperature"
+                    style="@style/MainWeatherText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="温度：" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/text_main_margin_size">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_main_margin_size"
+                android:gravity="left"
+                android:text="@string/fivedays_temps"
+                android:textSize="@dimen/text_size_small" />
+
+            <lecho.lib.hellocharts.view.LineChartView
+                android:id="@+id/linechart_weather_temps"
+                android:layout_width="match_parent"
+                android:layout_height="180dip"
+                android:padding="@dimen/text_main_margin_size" />
+
+            <include
+                android:id="@+id/weather_detail_layout"
+                layout="@layout/weather_detail"></include>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_main_margin_size"
+                android:gravity="center"
+                android:text="@string/datafrom"
+                android:textSize="@dimen/text_size_small" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

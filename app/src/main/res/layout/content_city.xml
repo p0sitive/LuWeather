@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fffafafa"
+    android:orientation="vertical"
+    tools:context=".activity.CitySelectActivity"
+    tools:showIn="@layout/activity_city_select">
+
+    <LinearLayout
+        android:id="@+id/activity_city_search_input"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/editText_select_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|bottom"
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="15dip"
+            android:hint="中文/拼音搜索城市"
+            android:textColor="#ff404040"
+            android:textSize="@dimen/text_size_small" />
+
+    </LinearLayout>
+
+    <com.lee.luweather.view.LetterFilterListView
+        android:id="@+id/letterFilterlv_select_city"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listview_select_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:cacheColorHint="#00000000"
+            android:divider="@null" />
+    </com.lee.luweather.view.LetterFilterListView>
+</LinearLayout>

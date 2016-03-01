@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">LuWeather</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">设置</string>
+    <string name="action_refresh">刷新</string>
+    <string name="action_reset">重置</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="font_fontFamily_medium">sans-serif</string>
+
+    <!--icon font String -->
+    <string name="iconfont_name">iconfont.ttf</string>
+    <string name="icon_text">56</string>
+
+    <string name="ICON_28">&#xe600;</string>
+    <string name="list">&#xe601;</string>
+    <string name="location_off">&#xe602;</string>
+    <string name="location_on">&#xe603;</string>
+    <string name="search">&#xe604;</string>
+    <string name="signal_wifi_off">&#xe605;</string>
+    <string name="sync">&#xe606;</string>
+    <string name="view_list">&#xe607;</string>
+    <string name="晴">&#xe608;</string>
+    <string name="多云">&#xe609;</string>
+    <string name="少云">&#xe60a;</string>
+    <string name="晴间多云">&#xe60b;</string>
+    <string name="阴">&#xe60c;</string>
+    <string name="有风">&#xe60d;</string>
+    <string name="平静">&#xe60e;</string>
+    <string name="微风">&#xe60f;</string>
+    <string name="大风">&#xe610;</string>
+    <string name="风暴">&#xe611;</string>
+    <string name="阵雨">&#xe612;</string>
+    <string name="强阵雨">&#xe613;</string>
+    <string name="雷阵雨">&#xe614;</string>
+    <string name="强雷阵雨">&#xe615;</string>
+    <string name="雷阵雨伴有冰雹">&#xe616;</string>
+    <string name="小雨">&#xe617;</string>
+    <string name="中雨">&#xe618;</string>
+    <string name="大雨">&#xe619;</string>
+    <string name="极端降雨">&#xe61a;</string>
+    <string name="细雨">&#xe61b;</string>
+    <string name="大暴雨">&#xe61c;</string>
+    <string name="冻雨">&#xe61d;</string>
+    <string name="小雪">&#xe61e;</string>
+    <string name="中雪">&#xe61f;</string>
+    <string name="大雪">&#xe620;</string>
+    <string name="暴雪">&#xe621;</string>
+    <string name="雨夹雪">&#xe622;</string>
+    <string name="雨雪天气">&#xe623;</string>
+    <string name="阵雨夹雪">&#xe624;</string>
+    <string name="阵雪">&#xe625;</string>
+    <string name="薄雾">&#xe626;</string>
+    <string name="雾">&#xe627;</string>
+    <string name="霾">&#xe628;</string>
+    <string name="扬沙">&#xe629;</string>
+    <string name="浮尘">&#xe62a;</string>
+    <string name="沙尘暴">&#xe62b;</string>
+    <string name="强沙尘暴">&#xe62c;</string>
+    <string name="热">&#xe62d;</string>
+    <string name="冷">&#xe62e;</string>
+    <string name="未知">&#xe62f;</string>
+    <string name="dashboard">&#xe630;</string>
+    <string name="home">&#xe631;</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="datafrom">数据来源：中国环境监测总站</string>
+    <string name="fivedays_temps">未来五日天气</string>
+    <string name="title_activity_city">城市选择</string>
+    <string name="title_activity_city_manager">城市管理</string>
+    <string name="big_text">较不宜洗车，未来一天无雨，风力较大，如果执意擦洗汽车，要做好蒙上污垢的心理准备。</string>
+    <string name="CityManager">城市管理</string>
+    <string name="SelectCity">城市选择</string>
+</resources>
