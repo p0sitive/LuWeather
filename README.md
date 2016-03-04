@@ -7,6 +7,7 @@
 3. 多城市管理，滑动删除
 4. 天气下拉刷新
 5. 根据基站获取大致位置
+6. 沉浸式状态栏
 
 ---
 > 天气API： [小米天气API](http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=CITYID) 

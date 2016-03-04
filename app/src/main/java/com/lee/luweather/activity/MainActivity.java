@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("xxx", "selected position: " + position);
                     if (null != swipeRefreshLayout && !swipeRefreshLayout.isEnabled()) {
                         swipeRefreshLayout.setEnabled(true);
-                        Log.i("xxx","swipeRefreshLayout is enabled");
+                        Log.i("xxx", "swipeRefreshLayout is enabled");
                     }
                 }
 
@@ -325,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
     boolean isExistCity(String cityName) {
         boolean isExist = false;
         List<Utils.WeatherHolder> list = cityTabsAdapter.getList();
-        if (list != null || list.size() > 0) {
+        if (list != null && list.size() > 0) {
             for (Utils.WeatherHolder temp : list) {
                 if (temp.city.equals(cityName)) {
                     isExist = true;

@@ -56,7 +56,7 @@ public class NetworkUtils {
     }
 
     public NetworkUtils init(Context context) {
-        this.mContext = context;
+        this.mContext = context.getApplicationContext();
         return this;
     }
 
