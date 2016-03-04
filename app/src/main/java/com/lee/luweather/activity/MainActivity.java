@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -18,10 +17,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -39,13 +36,10 @@ import com.lee.luweather.util.StatusBarUtils;
 import com.lee.luweather.util.Utils;
 import com.lee.luweather.view.SlidingTabLayout;
 
-import org.xutils.DbManager;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -171,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                                            int positionOffsetPixels) {
                     Log.i("xxx", "scroll position: " + position + " , offset: " + positionOffset);
                     if (null != swipeRefreshLayout && swipeRefreshLayout.isEnabled()) {
-                        //swipeRefreshLayout.setEnabled(false);
+                        swipeRefreshLayout.setEnabled(false);
                         Log.i("xxx", "swipeRefreshLayout is not enabled");
 
                     }
@@ -182,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onPageSelected(int position) {
                     Log.i("xxx", "selected position: " + position);
                     if (null != swipeRefreshLayout && !swipeRefreshLayout.isEnabled()) {
-                        //swipeRefreshLayout.setEnabled(true);
+                        swipeRefreshLayout.setEnabled(true);
                         Log.i("xxx","swipeRefreshLayout is enabled");
                     }
                 }
