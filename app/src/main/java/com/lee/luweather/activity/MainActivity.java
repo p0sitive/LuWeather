@@ -193,9 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CitySelectActivity.class);
-                mContext.startActivity(intent);
-                mDrawerLayout.closeDrawers();
+                gotoNextPage(CitySelectActivity.class);
             }
         });
 
@@ -204,9 +202,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CityManagerActivity.class);
-                mContext.startActivity(intent);
-                mDrawerLayout.closeDrawers();
+                gotoNextPage(CityManagerActivity.class);
             }
         });
 
@@ -222,6 +218,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * 页面跳转
+     * @param claze
+     */
+    private void gotoNextPage(final Class claze) {
+        Intent intent = new Intent(MainActivity.this, claze);
+        mContext.startActivity(intent);
+        mDrawerLayout.closeDrawers();
+    }
+
+    /**
+     * 刷新Tabs
+     */
     private void refreshTabs() {
         cityTabsAdapter = new CityTabsAdapter(cityList, MainActivity.this);
         mViewPager.setAdapter(cityTabsAdapter);
@@ -284,7 +293,13 @@ public class MainActivity extends AppCompatActivity {
                 refreshTabs();
                 cityTabsAdapter.notifyDataSetChanged();
                 Utils.showToast(MainActivity.this, "重置成功");
-
+                return true;
+            case R.id.action_selectcity:
+                gotoNextPage(CitySelectActivity.class);
+                return true;
+            case R.id.action_managecity:
+                gotoNextPage(CityManagerActivity.class);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

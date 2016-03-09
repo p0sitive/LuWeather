@@ -8,6 +8,16 @@
         app:showAsAction="ifRoom"
         />
     <item
+        android:id="@+id/action_selectcity"
+        android:orderInCategory="100"
+        android:title="@string/SelectCity"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_managecity"
+        android:orderInCategory="100"
+        android:title="@string/CityManager"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_reset"
         android:orderInCategory="100"
         android:title="@string/action_reset"
