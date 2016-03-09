@@ -220,10 +220,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 页面跳转
-     * @param claze
+     *
+     * @param clazz
      */
-    private void gotoNextPage(final Class claze) {
-        Intent intent = new Intent(MainActivity.this, claze);
+    private void gotoNextPage(final Class clazz) {
+        Intent intent = new Intent(MainActivity.this, clazz);
         mContext.startActivity(intent);
         mDrawerLayout.closeDrawers();
     }
@@ -309,8 +310,12 @@ public class MainActivity extends AppCompatActivity {
     private void refreshCurrentCityWeather() {
         Utils.WeatherHolder holder = cityTabsAdapter.getList().get(mViewPager.getCurrentItem());
         Utils.getWeatherByCityName(holder.city);
-        if (null != swipeRefreshLayout || swipeRefreshLayout.isRefreshing()) {
+        if (null != swipeRefreshLayout && swipeRefreshLayout.isRefreshing()) {
             swipeRefreshLayout.setRefreshing(false);
+        }
+        View view = cityTabsAdapter.getView(mViewPager.getCurrentItem());
+        if (view != null) {
+            view.setScrollY(0);
         }
     }
 
