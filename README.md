@@ -39,7 +39,9 @@
 ---
 截图
 
-![](screenshots/Screenshot_1.png)
+![](screenshots/new1.png)
+
+![](screenshots/new2.png)
 
 ![](screenshots/Screenshot_2.png)
 
