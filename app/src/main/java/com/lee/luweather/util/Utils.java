@@ -46,6 +46,8 @@ public class Utils {
 
     static Context mContext;
 
+    private static LocalCity city;
+
     public static String local = "test";
 
     static {
@@ -61,7 +63,7 @@ public class Utils {
                         getCity();
                         break;
                     case 0x12:
-                        LocalCity city = (LocalCity) msg.obj;
+                        city = (LocalCity) msg.obj;
                         /*intent = new Intent(Constant.INTENT_ACTION_GETCITY);
                         bundle = new Bundle();
                         bundle.putInt("type",0);

@@ -45,7 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_margin="@dimen/text_main_margin_size"
+                android:layout_marginTop="@dimen/text_main_margin_size"
+                android:layout_marginRight="@dimen/text_main_margin_size"
                 android:background="@drawable/a_1" />
 
             <LinearLayout
@@ -72,7 +73,28 @@
                     android:layout_gravity="center"
                     android:layout_weight="2"
                     android:text="晴"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.lee.luweather.view.IconView
+                        android:id="@+id/icon_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/location_on"
+                        android:visibility="invisible"/>
+                    <TextView
+                        android:id="@+id/textView_weather_city"
+                        android:text="北京北京"
+                        android:textSize="18sp"
+                        android:maxLines="2"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -84,7 +106,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/ll_weather_main"
                 android:orientation="vertical"
-                android:paddingLeft="@dimen/text_main_margin_size">
+                android:paddingLeft="10dip">
 
 
                 <TextView

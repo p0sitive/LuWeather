@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -34,6 +36,7 @@ import com.lee.luweather.util.DbHelper;
 import com.lee.luweather.util.NetworkUtils;
 import com.lee.luweather.util.StatusBarUtils;
 import com.lee.luweather.util.Utils;
+import com.lee.luweather.view.CirclePageIndicator;
 import com.lee.luweather.view.SlidingTabLayout;
 
 import java.io.File;
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     ActionBarDrawerToggle mDrawerToggle;
     DrawerLayout mDrawerLayout;
-    SlidingTabLayout mSlidingTabLayout;
+//    SlidingTabLayout mSlidingTabLayout;
     ViewPager mViewPager;
     List<Utils.WeatherHolder> cityList;
     CityTabsAdapter cityTabsAdapter;
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     Context mContext;
     MyApplication application;
     SwipeRefreshLayout swipeRefreshLayout;
+    CirclePageIndicator mIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,19 +150,33 @@ public class MainActivity extends AppCompatActivity {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        mSlidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.weather_swiperefreshlayout);
+        swipeRefreshLayout.setColorSchemeColors(R.color.swipe_color_1, R.color.swipe_color_2, R.color.swipe_color_3, R.color.swipe_color_4);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshCurrentCityWeather();
+            }
+        });
+        swipeRefreshLayout.setEnabled(false);
 
-        // use own style rules for tab layout
+        //--------
+        /*mSlidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
         mSlidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
 
-        Resources res = getResources();
         mSlidingTabLayout.setSelectedIndicatorColors(res.getColor(R.color.tab_indicator_color));
-        mSlidingTabLayout.setDistributeEvenly(true);
+        mSlidingTabLayout.setDistributeEvenly(true);*/
+        //--------
+        Resources res = getResources();
+        mIndicator = new CirclePageIndicator(getApplicationContext());
+        setIndicatorParams();
+
         refreshTabs();
+        mIndicator.setViewPager(mViewPager);
 
         StatusBarUtils.setColorForDrawerLayout(this, mDrawerLayout, res.getColor(R.color.colorMainDark));
         // Tab events
-        if (mSlidingTabLayout != null) {
+        /*if (mSlidingTabLayout != null) {
             mSlidingTabLayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 @Override
                 public void onPageScrolled(int position, float positionOffset,
@@ -186,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-        }
+        }*/
 
         LinearLayout navButton_SelectCity = (LinearLayout) findViewById(R.id.txtNavButton_selectCity);
         navButton_SelectCity.setOnClickListener(new View.OnClickListener() {
@@ -206,16 +224,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.weather_swiperefreshlayout);
-        swipeRefreshLayout.setColorSchemeColors(R.color.swipe_color_1, R.color.swipe_color_2, R.color.swipe_color_3, R.color.swipe_color_4);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                refreshCurrentCityWeather();
-            }
-        });
 
+    }
 
+    private void setIndicatorParams() {
+        if (null != mIndicator) {
+            int iScreenWidth = getApplicationContext().getResources().getDisplayMetrics().widthPixels;
+            int indicatorHeight = (int) (iScreenWidth * 0.04f);
+            mIndicator.setPadding(0, indicatorHeight / 4, 0, 0);
+            mIndicator.setRadius(indicatorHeight / 4);
+            mIndicator.setPageColor(0x00FFFFFF);
+            mIndicator.setFillColor(Color.RED);
+            mIndicator.setStrokeColor(Color.BLACK);
+            mIndicator.setStrokeWidth(2);
+            mIndicator.setSelectedRadius(indicatorHeight / 4 + 1);
+            mIndicator.setCentered(true);
+
+            RelativeLayout.LayoutParams indicatorParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, indicatorHeight);
+            indicatorParams.bottomMargin = 10;
+            indicatorParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+
+            ((RelativeLayout) findViewById(R.id.weather_content))
+                    .addView(mIndicator, indicatorParams);
+        }
     }
 
     /**
@@ -235,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
     private void refreshTabs() {
         cityTabsAdapter = new CityTabsAdapter(cityList, MainActivity.this);
         mViewPager.setAdapter(cityTabsAdapter);
-        mSlidingTabLayout.setViewPager(mViewPager);
+        //mSlidingTabLayout.setViewPager(mViewPager);
     }
 
     @Override
@@ -408,9 +439,10 @@ public class MainActivity extends AppCompatActivity {
                             index++;
                         }
                         if (!isAdd) {
+                            DbHelper.getInstance().saveCityWeather(cityWeather);
                             holder = new Utils.WeatherHolder(cityName, wt);
                             cityTabsAdapter.getList().add(holder);
-                            DbHelper.getInstance().saveCityWeather(cityWeather);
+                            cityTabsAdapter.notifyDataSetChanged();
                         }
                     }
                     cityTabsAdapter.notifyDataSetChanged();

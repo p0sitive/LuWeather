@@ -45,6 +45,10 @@ public class CityTabsAdapter extends PagerAdapter {
         return list;
     }
 
+    public void setList(List<Utils.WeatherHolder> list) {
+        this.list = list;
+    }
+
     List<Utils.WeatherHolder> list;
     Context mContext;
 
@@ -105,8 +109,8 @@ public class CityTabsAdapter extends PagerAdapter {
         return view;
     }
 
-    public View getView(int position){
-        return  views.get(position);
+    public View getView(int position) {
+        return views.get(position);
     }
 
 
@@ -144,6 +148,9 @@ public class CityTabsAdapter extends PagerAdapter {
         if (weather != null && !TextUtils.isEmpty((weather.getRealtime().getWeather()))) {
             ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.pb_refresh);
             progressBar.setVisibility(View.GONE);
+
+            TextView textViewCity= (TextView) view.findViewById(R.id.textView_weather_city);
+            textViewCity.setText(weather.getForecast().getCity());
 
             ImageView iconView = (ImageView) view.findViewById(R.id.icon_weather_main);
             iconView.setBackgroundResource(Utils.getWeatherTypeRsId(weather.getRealtime().getWeather(), "a"));
